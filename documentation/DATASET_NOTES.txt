@@ -1,0 +1,14 @@
+SALES & OPERATIONS PERFORMANCE ANALYSIS - DATASET NOTES
+=======================================================
+
+Period: 2026-01-01 to 2026-06-30
+Interaction rows: 12,000
+Target rows: 144
+Agents: 24
+Sales: 1,629
+Overall conversion rate: 13.58%
+Total sales amount: $135,610.59
+
+The data is synthetic and intentionally designed with realistic performance patterns.
+It contains no missing required fields, duplicate interaction IDs, or inconsistent category labels.
+Recommended quick validation: verify data types, null count, duplicate IDs, and sales_amount >= 0.
