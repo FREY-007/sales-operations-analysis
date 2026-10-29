@@ -53,6 +53,11 @@ CREATE TABLE sales_interactions (
 -- 3) sales_interactions_clean.csv -> sales_interactions
 --
 -- After importing the synthetic target data, recalibrate targets for the portfolio scenario:
+
+-- IMPORTANT: Run this UPDATE only once after importing
+-- the original sales_targets_clean.csv file.
+-- Re-running it will modify the targets again.
+
 UPDATE sales_targets
 SET sales_target =
     ROUND(sales_target * 0.30 / 50) * 50;
