@@ -86,6 +86,21 @@ The dashboard uses DAX measures and relational data modeling to dynamically reca
 - `images/` — Dashboard screenshot
 - `documentation/` — Dataset notes
 
+ ## How to Reproduce This Project
+
+1. Install PostgreSQL, DBeaver, and Power BI Desktop.
+2. Connect to the default PostgreSQL database and create a new database named `sales_operations`.
+3. Connect to `sales_operations` and execute the `CREATE TABLE` statements in `sql/01_database_setup.sql`.
+4. Import the CSV files into their corresponding tables in this order:
+   - `agents.csv` → `agents`
+   - `sales_targets_clean.csv` → `sales_targets`
+   - `sales_interactions_clean.csv` → `sales_interactions`
+5. After importing the data, execute the sales target recalibration `UPDATE` statement at the end of `01_database_setup.sql` **once only**.
+6. Execute the queries in `sql/02_business_analysis.sql` to reproduce the business analysis.
+7. Open `powerbi/sales_operations_dashboard.pbix` in Power BI Desktop to explore the interactive dashboard.
+
+**Note:** The dashboard uses imported data. Refreshing from PostgreSQL requires configuring the local database connection. The target recalibration statement must not be executed repeatedly.
+
 ## Business Recommendations
 
 - Investigate the operational practices associated with June's improved conversion performance.
